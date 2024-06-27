@@ -5,7 +5,10 @@ from .models import *
 
 def index(request):
     context = {
-        'books': Book.objects.all()
+        'books': Book.objects.all(),
+        'categories':Category.objects.all(),
+        'Book_Count': Book.objects.count()
+
     }
     return render(request,'pages/index.html' ,context)
 

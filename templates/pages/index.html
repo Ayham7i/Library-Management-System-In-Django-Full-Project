@@ -27,8 +27,10 @@
                 <div class="card-body">
                   <div class="d-flex">
                     <p class="d-flex flex-column">
-                      <span class="text-bold text-lg">500</span>
+                      <span class="text-bold text-lg">{{Book_Count}}</span>
+                      
                       <span>اجمالي عدد الكتب</span>
+                      
                     </p>  
                   </div>
                   <!-- /.d-flex -->
@@ -115,19 +117,13 @@
           <div class="row justify-content-center mb-3">
             <div class="col-4 ">
               <ul class="nav">
-            
+                {% for category in categories  %}
+                
                 <li class="nav-item ">
-                  <a id="" class="nav-link bg-primary" href="#">تاريخ</a>
+                  <a id="" class="nav-link bg-primary" href="#">{{category.name}}</a>
                 </li>
-                <li class="nav-item ">
-                  <a id="" class="nav-link bg-primary" href="#">فن</a>
-                </li>
-                <li class="nav-item ">
-                  <a id="" class="nav-link bg-primary" href="#">ثقافة</a>
-                </li>
-                <li class="nav-item ">
-                  <a id="" class="nav-link bg-primary" href="#">رومانسية</a>
-                </li>
+                
+                {% endfor %}
               </ul>
             </div>
           </div>
@@ -153,7 +149,7 @@
                 </div>
 
                 <div style="background: url({{book.book_photo.url}}); background-size: cover" class="widget-user-header bg-info">
-                  <h3 class="widget-user-username" style="color:black; font-weight: bold;">{{book.title}}</h3>
+                  <h3 class="widget-user-username" style=" font-weight: bold;">{{book.title}}</h3>
                   <h5 class="widget-user-desc" style="color:black; font-weight: bold;">{{book.author}}</h5>
                 </div>
                 <div class="widget-user-image">
@@ -173,8 +169,16 @@
                         <!-- /.col -->
                     <div class="col-sm-4 border-right">
                       <div class="description-block">
+                        {% if book.price %}
+                        
                         <h5 class="description-header">${{book.price}}</h5>
                         <span class="description-text">السعر</span>
+                        {% elif book.rental_price_day %}
+
+                        <h5 class="description-header">${{book.rental_price_day}}</h5>
+                        <span class="description-text">في اليوم </span>
+                        
+                        {% endif %}
                       </div>
                       <!-- /.description-block -->
                     </div>
