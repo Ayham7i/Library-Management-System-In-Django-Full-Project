@@ -13,4 +13,10 @@ def index(request):
     return render(request,'pages/index.html' ,context)
 
 def books(request):
-    return render(request, 'pages/book.html')
+    context = {
+        'books': Book.objects.all(),
+        'categories':Category.objects.all(),
+        'Book_Count': Book.objects.count()
+
+    }
+    return render(request, 'pages/book.html',context)

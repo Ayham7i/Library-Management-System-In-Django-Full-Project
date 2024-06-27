@@ -54,50 +54,15 @@
                   <button type="submit" class="btn btn-success">save</button>
                   <button id="backcat" class="btn btn-primary ">back</button>
               </form>  
-             
+                  {% for category in categories  %}
                   <li style="cursor: pointer;" class="nav-item">
                     <a id="" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>test 1</p>
+                      <p>{{category.name}}</p>
                     </a>
                   </li>
- 
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 2</p>
-                    </a>
-                  </li>
-
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 3</p>
-                    </a>
-                  </li>
-
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 4</p>
-                    </a>
-                  </li>
-
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 5</p>
-                    </a>
-                  </li>
-
-                  <li style="cursor: pointer;" class="nav-item">
-                    <a id="" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>test 6</p>
-                    </a>
-                  </li>
-        
-
+                  
+                  {% endfor %}
             </ul>
           </li>
 

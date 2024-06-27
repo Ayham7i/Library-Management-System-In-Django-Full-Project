@@ -30,7 +30,7 @@
                       <span class="text-bold text-lg">{{Book_Count}}</span>
                       
                       <span>اجمالي عدد الكتب</span>
-                      
+
                     </p>  
                   </div>
                   <!-- /.d-flex -->
@@ -117,7 +117,7 @@
           <div class="row justify-content-center mb-3">
             <div class="col-4 ">
               <ul class="nav">
-                {% for category in categories  %}
+                {% for category in categories|slice:'4'  %}
                 
                 <li class="nav-item ">
                   <a id="" class="nav-link bg-primary" href="#">{{category.name}}</a>
