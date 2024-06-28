@@ -148,7 +148,15 @@
                   </div>
                 </div>
 
+                {% if book.book_photo %}
+                
                 <div style="background: url({{book.book_photo.url}}); background-size: cover" class="widget-user-header bg-info">
+                  
+                {% else %}
+                  <div  class="widget-user-header bg-info">
+                  
+                {% endif %}
+
                   <h3 class="widget-user-username" style=" font-weight: bold;">{{book.title}}</h3>
                   <h5 class="widget-user-desc" style="color:black; font-weight: bold;">{{book.author}}</h5>
                 </div>
