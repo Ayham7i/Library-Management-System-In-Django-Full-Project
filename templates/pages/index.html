@@ -93,6 +93,7 @@
             <!-- form start -->
             <form method="POST" enctype="multipart/form-data"  > 
               <div class="card-body"> 
+                {% csrf_token %}
 
                 {{form}}
               
