@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import *
-from .forms import BookForm
+from .forms import BookForm,CategoryForm
 
 # Create your views here.
 
@@ -20,7 +20,8 @@ def index(request):
         'books': Book.objects.all(),
         'categories':Category.objects.all(),
         'Book_Count': Book.objects.count(),
-        'form':BookForm()
+        'form':BookForm(),
+        'formcat':CategoryForm()
 
     }
     return render(request,'pages/index.html' ,context)

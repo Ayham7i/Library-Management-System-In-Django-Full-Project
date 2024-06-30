@@ -47,12 +47,15 @@
                         <p  class="text-light"> Add New </p>
                     </a>
                   </li> 
-              <form id="cat" method="POST">
-             
-                  <input type="text" class="form-control">
+                  <form id="cat" method="POST">
+                    
+                <div id="catinput">
+
+                  {{formcat}}
 
                   <button type="submit" class="btn btn-success">save</button>
                   <button id="backcat" class="btn btn-primary ">back</button>
+                </div>
               </form>  
                   {% for category in categories  %}
                   <li style="cursor: pointer;" class="nav-item">
