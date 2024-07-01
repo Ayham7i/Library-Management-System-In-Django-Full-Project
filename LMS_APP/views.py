@@ -37,3 +37,25 @@ def books(request):
 
     }
     return render(request, 'pages/book.html',context)
+
+def update(request , id):
+    book_id = Book.objects.get(id=id)
+    if request.method == 'POST':
+        book_save = Book(request.POST,request.FILES , instance=book_id)
+        if book_save.is_valid():
+            book_save.save()
+    else:
+        book_save = BookForm(instance=book_id)
+        context = {
+            'form':book_save
+        
+        }
+
+    return render(request,'pages/update.html',context)
+
+
+
+     
+
+  
+
