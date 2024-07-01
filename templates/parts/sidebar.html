@@ -47,7 +47,8 @@
                         <p  class="text-light"> Add New </p>
                     </a>
                   </li> 
-                  <form id="cat" method="POST">
+              <form id="cat" method="POST">
+                    {% csrf_token %}
                     
                 <div id="catinput">
 

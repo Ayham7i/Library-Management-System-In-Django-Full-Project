@@ -8,8 +8,11 @@ def index(request):
 
     if request.method == 'POST':
         add_book  = BookForm(request.POST , request.FILES)
-        if add_book.is_valid:
+        if add_book.is_valid():
             add_book.save()
+        add_category = CategoryForm(request.POST)
+        if add_category.is_valid():
+            add_category.save()
     
 
 
