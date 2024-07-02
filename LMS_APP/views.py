@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render,get_object_or_404
 from .models import *
 from .forms import BookForm,CategoryForm
 
@@ -54,6 +54,15 @@ def update(request , id):
         }
 
     return render(request,'pages/update.html',context)
+
+
+
+def delete(request , id):
+    book_delete = get_object_or_404(Book,id=id)
+    if request.method == 'POST':
+        book_delete.delete()
+        return redirect('/')
+    return render(request,'pages/delete.html')
 
 
 
