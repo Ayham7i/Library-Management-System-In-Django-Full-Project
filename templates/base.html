@@ -56,6 +56,29 @@ $("#backcat").click(function(){
   
 })
 
+
+  {% for book in books  %}
+
+  $(".cat{{book.category.id}}").click(function(){
+
+    $(".bookhide").hide()
+    $(".book{{book.category.id}}").show()
+  })
+
+
+  $(".status{{book.status}}").click(function(){
+
+    $(".bookhide").hide()
+    $(".book{{book.status}}").show()
+
+  })
+  
+  
+  
+  {% endfor %}
+
+
+
 </script>
 <!-- Bootstrap -->
 <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
