@@ -22,9 +22,12 @@ def index(request):
     context = {
         'books': Book.objects.all(),
         'categories':Category.objects.all(),
-        'Book_Count': Book.objects.count(),
         'form':BookForm(),
-        'formcat':CategoryForm()
+        'formcat':CategoryForm(),
+        'Book_Count': Book.objects.filter(active = True).count(),
+        'BookSold': Book.objects.filter(status = 'Sold').count(),
+        'BookRental': Book.objects.filter(status = 'Rental').count(),
+        'BookAvailable': Book.objects.filter(status = 'Available').count(),
 
     }
     return render(request,'pages/index.html' ,context)
