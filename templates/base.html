@@ -46,6 +46,11 @@
 <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
 <script>
 
+
+  #('#rentalday').keyup(function(){
+    #('#totalrental').val(#('#rentalday').val()*#('#rentalprice').val())
+  })
+
 $("#catinput").hide()
 $("#addcat").click(function(){
   $("#catinput").show()
